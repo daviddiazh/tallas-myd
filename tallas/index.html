@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <style>
+        .contenedor-form{
+        margin: auto;
+        width: 300px;
+        padding: 34px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        }
+        .contenedor-form h1{
+        margin: 0 0 26px;
+        padding: 0;
+        font-size: 30px;
+        color: #E6007E;
+        font-family: 'Poppins', sans-serif;
+        }
+        .contenedor-form .elemento label{
+        color: #000;
+        font-family: 'Poppins', sans-serif;
+        }
+        .contenedor-form .elemento input{
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #c8c8c8;
+        border-radius: 4.5px;
+        margin-bottom: 15px;
+        width: 95%;
+        font-family: 'Poppins', sans-serif;
+        }
+        .elemento-enviar, .elemento-reset{
+        text-align: center;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #c8c8c8;
+        border-radius: 4.5px;
+        margin-bottom: 15px;
+        width: 98%;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        }
+        .paragraph_programa{
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        text-align: justify;
+        }
+        .display{
+        display: flex;
+        flex-direction: column;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding: 20px;
+        border: 1px solid #E6007E;
+        border-radius: 4.5px;
+        margin-bottom: 15px;
+        width: 95%;
+        font-family: 'Poppins', sans-serif;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div id="forma" class="contenedor-form">
+        <!-- <p class="paragraph_programa">¡Nos renovamos para ti y queremos brindarte una mejor experiencia!
+        </p> <br>
+        <p class="paragraph_programa">A continuación te solicitaremos unos datos para que elijas tu talla ideal, recuerda que la medida de tu cintura debe ser a la altura del ombligo y en centímetros.</p>
+         -->
+        <div class="elemento">
+            <label class="elemento-p-programa" for="name-programa">¿Cómo te llamas?</label> <br>
+            <input type="text" id="name-programa" name="name-programa" id="name-programa" placeholder="Ej: Maria" required="true"/>
+        </div> 
+
+        <div class="elemento">
+            <label class="elemento-p-programa" for="size-programa">¿Cuál es tu talla de pantalón?</label> <br>
+            <input type="number" id="size-programa" name="size-programa" placeholder="Ej: 6" required="true"/>
+        </div>
+
+        <div class="elemento">
+            <label class="elemento-p-programa" for="cm-programa">¿Cuánto mide tu cintura en cm?</label> <br>
+            <input type="number" id="cm-programa" name="cm-programa" placeholder="Ej: 62 cm" required="true"/>
+        </div>
+
+        <div class="elemento-enviar-reset">
+            <!-- <input class="elemento-enviar" type="submit" id="enviar" value="Ver la Recomendación."/> -->
+            <button style="text-align: center;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #c8c8c8;
+            border-radius: 4.5px;
+            margin-bottom: 15px;
+            width: 98%;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;" onclick="miFunc()">Ver Recomendación</button>
+            <!-- <input class="elemento-reset" type="reset" id="reset" value="Reestablecer"/> -->
+        </div>
+        
+        <!-- <div class="output">
+            <output class="display" readonly="true" type="text" id="result" placeholder="">
+        </div> -->
+
+    
+
+    <script>
+        function miFunc() {
+    
+            let forma = document.getElementById("forma").value;
+            let botonName = document.getElementById("name-programa").value;
+            let size = document.getElementById("size-programa").value;
+            let cm = document.getElementById("cm-programa").value;
+            let botonEnviar = document.getElementById("enviar");
+            let message;
+
+
+            if(size == 5 && cm >53 && cm <60){
+            message = "la talla que te recomendamos es la 3XS.💖";
+            alert (botonName+ ", "+ message);
+            }
+            else if(size == 6 && cm >=61 && cm <=67){
+            message = "la talla que te recomendamos es la 2XS.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 8 && cm >= 68 && cm <= 74){
+            message = "la talla que te recomendamos es la XS.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 10 && cm >= 75 && cm <= 81){
+            message = "la talla que te recomendamos es la S.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 12 && cm >= 82 && cm <=88){
+            message = "la talla que te recomendamos es la M.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 14 && cm >= 89 && cm <=95){
+            message = "la talla que te recomendamos es la L.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 16 && cm >= 96 && cm <=102){
+            message = "la talla que te recomendamos es la XL.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 18 && cm >= 103 && cm <=109){
+            message = "la talla que te recomendamos es la 2XL.💖";
+            alert(botonName+ ", "+ message);
+            }
+            else if(size == 20 && cm >= 110 && cm <= 116){
+            message = "la talla que te recomendamos es la 3XL.💖";
+            alert(botonName+ ", "+ message);
+            }   
+            else if(size == 22 && cm >= 117 && cm <= 123){
+            message = "la talla que te recomendamos es la 4XL.💖";
+            alert(botonName+ ", "+ message);
+            }      
+            else {message = "por favor termina de completar los datos o verificalos.😟"}
+            alert(botonName+ ", "+ message);
+
+        }
+    </script>
+
+    </div>
+
+</body>
+</html>
